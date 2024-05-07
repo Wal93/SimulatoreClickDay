@@ -1,0 +1,255 @@
+<html lang="it-IT"><head>
+      <meta charset="UTF-8">
+      <title>Consulting Group – Bandimprese</title>
+      <link rel="icon" href="https://bandimprese.it/wp-content/uploads/2021/01/cropped-Consulting-Group-Favicon-512-32x32.png" sizes="32x32">
+      <link rel="icon" href="https://bandimprese.it/wp-content/uploads/2021/01/cropped-Consulting-Group-Favicon-512-192x192.png" sizes="192x192">
+      <link rel="apple-touch-icon" href="https://bandimprese.it/wp-content/uploads/2021/01/cropped-Consulting-Group-Favicon-512-180x180.png">
+      <meta name="msapplication-TileImage" content="https://bandimprese.it/wp-content/uploads/2021/01/cropped-Consulting-Group-Favicon-512-270x270.png">
+      <script src="https://www.hCaptcha.com/1/api.js" async="" defer=""></script>
+      <style>
+        body {
+          font-family: 'Open Sans', sans-serif;
+          margin: 0;
+        }
+
+        nav {
+          width: 100%;
+        }
+
+        nav>ul {
+          display: flex;
+          min-width: 400px;
+          list-style-type: none;
+          background-color: #002e5f;
+        }
+
+        nav>ul>li {
+          padding: 12px;
+        }
+
+        nav>ul>li>a {
+          color: white;
+          text-decoration: none;
+          font-size: 1em;
+          padding: 24px;
+          text-transform: uppercase;
+        }
+
+        button,
+        .custom-submit {
+          border: none;
+          background-color: #1e6665;
+          color: white;
+          padding: 16px;
+          text-transform: uppercase;
+          font-size: 0.95em;
+          cursor: pointer;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 20px;
+        }
+
+        th,
+        td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+
+        th {
+          background-color: #f2f2f2;
+        }
+
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+
+        .header {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          max-width: 1366px;
+          width: auto;
+          margin: auto;
+        }
+
+        .logo-container {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo-text {
+          text-decoration: none;
+          color: black;
+        }
+
+        .nav-container {
+          width: 100%;
+          display: flex;
+        }
+
+        .justify-end {
+          justify-content: flex-end;
+        }
+
+        .footer {
+          position: absolute;
+          bottom: 12px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .red {
+          background-color: #C9291B;
+        }
+
+        .custom-input {
+          width: 100%;
+          padding: 25px 15px 15px;
+          border: 1px solid #ccc;
+          border-radius: 25px;
+          font-size: 16px;
+          position: relative;
+          z-index: 1;
+          background-color: transparent;
+          outline: none;
+        }
+
+        .custom-label {
+          position: absolute;
+          top: 50%;
+          left: 15px;
+          transform: translateY(-50%);
+          font-size: 16px;
+          color: #333;
+          transition: 0.2s ease-out;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        .custom-input:focus+.custom-label,
+        .custom-input:not(:placeholder-shown)+.custom-label,
+        .custom-input:-webkit-autofill+.custom-label,
+        input:-internal-autofill-selected+.custom-label {
+          top: 15px;
+          font-size: 12px;
+          color: #007bff;
+        }
+
+        .form-group {
+          position: relative;
+          margin-bottom: 20px;
+        }
+
+        .h-captcha {
+          margin-bottom: 16px;
+        }
+      </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var inputs = document.querySelectorAll('input:not([placeholder])');
+        });
+
+        function mostraConfermaCancellaAccount() {
+          var result = confirm("Sei sicuro di voler cancellare il tuo account?");
+
+          if (result) {
+            fetch('', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body: 'cancellaAccount=true',
+            })
+              .then(response => {
+                location.replace(window.location.href);
+              })
+              .catch(error => {
+              });
+          } else {
+            alert("Cancellazione annullata.");
+          }
+        }
+
+        function mostraConfermaEliminaCliccatore($id) {
+          var result = confirm("Sei sicuro di voler cancellare questo cliccatore?");
+
+          if (result) {
+            fetch('', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body: 'IdCliccatoreDaEliminare=' + $id,
+            })
+              .then(response => {
+                location.reload();
+              })
+              .catch(error => {
+              });
+          } else {
+            alert("Cancellazione annullata.");
+          }
+        }
+      </script>
+    </head>
+    
+<body>
+      <div style="max-width: 500px; min-width: 300px; margin: auto;">
+      <h1 style="text-align: center; padding: 32px">Registrazione</h1>
+      <form method="post" action="/registrazione.php" style="text-align: center;">
+        <div class="form-group">
+          <input class="custom-input" name="nome" type="text" placeholder="" value="" style="width: 100%;" maxlength="30" title="L'Username che dovrai usare per effettuare il login" required="">
+          <label class="custom-label" for="nome">Nome Utente *</label>
+        </div>
+
+        <div class="form-group">
+          <input class="custom-input" name="password" type="password" placeholder="" value="" style="width: 100%;" maxlength="30" title="La password che dovrai usare per effettuare il login" required="">
+          <label class="custom-label" for="password">Password (almeno 8 caratteri) *</label>
+        </div>
+
+        <div class="form-group">
+          <input class="custom-input" name="password2" type="password" placeholder="" value="" style="width: 100%;" maxlength="30" title="Conferma la password inserita sopra" required="">
+          <label class="custom-label" for="password2">Conferma Password *</label>
+        </div>
+
+        <div class="form-group">
+          <input class="custom-input" name="nick" type="text" placeholder="" value="" style="width: 100%;" maxlength="30" title="Questo è il nome pubblico che gli altri vedranno nelle classifiche al posto del tuo nome reale" required="">
+          <label class="custom-label" for="nick">Nickname *</label>
+        </div>
+
+        <div class="form-group">
+          <input class="custom-input" name="nomereale" type="text" placeholder="" value="" style="width: 100%;" maxlength="120" title="Il tuo vero nome" required="">
+          <label class="custom-label" for="nomereale">Nome *</label>
+        </div>
+
+        <div class="form-group">
+          <input class="custom-input" name="cognome" type="text" placeholder="" value="" style="width: 100%;" maxlength="120" title="Il tuo vero cognome" required="">
+          <label class="custom-label" for="cognome">Cognome *</label>
+        </div>
+
+        <div class="form-group">
+          <input class="custom-input" name="referente" type="text" placeholder="" value="" style="width: 100%;" maxlength="30" title="Inserisci il Nickname di chi ti ha invitato per entrare nel suo Team">
+          <label class="custom-label" for="referente">Nickname del Referente</label>
+        </div>
+
+        <div class="form-group">
+          <input class="custom-input" name="email" type="email" placeholder="" value="" style="width: 100%;" maxlength="254" title="L'E-Mail ci serve per poteri contattare in caso tu venga scelto per il ClickDay" required="">
+          <label class="custom-label" for="email">E-Mail *</label>
+        </div>
+
+        <div class="form-group">
+          <input class="custom-input" name="cellulare" type="tel" placeholder="" value="" style="width: 100%;" maxlength="10" title="Il numero di cellulare ci serve per poteri contattare in caso tu venga scelto per il ClickDay" required="">
+          <label class="custom-label" for="cellulare">Cellulare *</label>
+        </div>
+
+        <div class="h-captcha" data-sitekey="ffeb57c2-47e5-48dd-b5fa-46f966def42f" data-hl="it"><iframe src="https://newassets.hcaptcha.com/captcha/v1/50fb34a/static/hcaptcha.html#frame=checkbox&amp;id=0otjhsxd81z&amp;host=bandimprese.it&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=true&amp;custom=false&amp;hl=it&amp;tplinks=on&amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;sitekey=ffeb57c2-47e5-48dd-b5fa-46f966def42f&amp;theme=light&amp;origin=https%3A%2F%2Fbandimprese.it" tabindex="0" frameborder="0" scrolling="no" allow="private-state-token-issuance 'src'; private-state-token-redemption 'src'" title="Widget containing checkbox for hCaptcha security challenge" data-hcaptcha-widget-id="0otjhsxd81z" data-hcaptcha-response="" style="pointer-events: auto; width: 303px; height: 78px; overflow: hidden;"></iframe><textarea id="g-recaptcha-response-0otjhsxd81z" name="g-recaptcha-response" style="display: none;"></textarea><textarea id="h-captcha-response-0otjhsxd81z" name="h-captcha-response" style="display: none;"></textarea></div>
+
+        <input class="custom-submit" name="invia" type="submit" value="Invia">
+      </form>
+    </div>
+    <div aria-hidden="true" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: auto; top: -10000px; z-index: -2147483648; position: absolute; pointer-events: auto; transition: opacity 0.15s ease-out 0s; opacity: 0; visibility: hidden;"><div style="position: relative; z-index: 1;"><iframe src="https://newassets.hcaptcha.com/captcha/v1/50fb34a/static/hcaptcha.html#frame=challenge&amp;id=0otjhsxd81z&amp;host=bandimprese.it&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=true&amp;custom=false&amp;hl=it&amp;tplinks=on&amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;sitekey=ffeb57c2-47e5-48dd-b5fa-46f966def42f&amp;theme=light&amp;origin=https%3A%2F%2Fbandimprese.it" frameborder="0" scrolling="no" allow="private-state-token-issuance 'src'; private-state-token-redemption 'src'" title="Main content of the hCaptcha challenge" style="border: 0px; z-index: 2000000000; position: relative;"></iframe></div><div style="width: 100%; height: 100%; position: fixed; pointer-events: none; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%;"><div style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1;"></div><div style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0;"></div></div></div></body></html>
