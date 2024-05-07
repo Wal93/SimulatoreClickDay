@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina Principale</title>
+
+
+    <script>
+        // Funzione per reindirizzare ad una pagina di simulazione specifica
+        function vaiAllaSimulazione() {
+            window.location.href = "simulazione21_1.html";
+        }
+    </script>
+
+
+<!--    <script>-->
+<!--        // Funzione per selezionare casualmente una delle pagine di simulazione-->
+<!--        function iniziaTest() {-->
+<!--            // Genera un numero casuale tra 1 e 50-->
+<!--            const pagina = Math.floor(Math.random() * 50) + 1;-->
+<!--            // Reindirizza alla pagina corrispondente-->
+<!--            window.location.href = `simulazione22_${pagina}.html`;-->
+<!--        }-->
+<!--    </script>-->
+
+
+
+    <script>
+        function startTest() {
+            const startTime = Date.now();
+            localStorage.setItem('startTime', startTime);
+            window.location.href = 'simulazione21_2.html';
+        }
+    </script>
+
+</head>
+<body>
+
+<h1>Simulazione CLICK DAY</h1>
+<button onclick="startTest()">INIZIA IL TEST</button> <!-- Pulsante per iniziare il test -->
+
+
+<!--<h1>Simulazione CLICK DAY</h1>-->
+<!--<button onclick="iniziaTest()">INIZIA IL TEST</button> &lt;!&ndash; Pulsante per iniziare il test &ndash;&gt;-->
+
+
+</body>
+</html>
