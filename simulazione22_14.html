@@ -188,8 +188,8 @@
                   4/3/2025                </label>
               </div>
                           <div style="width: 33.33%; padding: 5px 0;">
-                <input type="radio" id="data_3" name="data" value="07/05/2024">
-                <label for="data_3">
+                <input type="radio" id="data_6" name="data" value="07/05/2024">
+                <label for="data_6">
                   07/05/2024                </label>
               </div>
                           <div style="width: 33.33%; padding: 5px 0;">
@@ -203,8 +203,8 @@
                   2/8/2025                </label>
               </div>
                           <div style="width: 33.33%; padding: 5px 0;">
-                <input type="radio" id="data_6" name="data" value="1/7/2021">
-                <label for="data_6">
+                <input type="radio" id="data_3" name="data" value="1/7/2021">
+                <label for="data_3">
                   1/7/2021                </label>
               </div>
                           <div style="width: 33.33%; padding: 5px 0;">
@@ -354,6 +354,33 @@
   <footer> © 2018 INAIL <span> - </span>ISTITUTO NAZIONALE PER L'ASSICURAZIONE CONTRO GLI INFORTUNI SUL LAVORO<span> -
     </span>P. IVA 00968951004
   </footer>
+  <script>
+      // Funzione per ottenere la data odierna formattata come GG/MM/AAAA
+      function getCurrentDate() {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0'); // Aggiungi zeri iniziali se necessario
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Mesi da 0 a 11, quindi aggiungiamo 1
+        const year = today.getFullYear();
+        return `${day}/${month}/${year}`; // Ritorna la data formattata
+      }
 
+      // Funzione per aggiornare il value del radio button con la data odierna
+      function updateRadioButtonWithCurrentDate() {
+        const currentDate = getCurrentDate(); // Ottieni la data odierna
+        const radioButton = document.getElementById('data_6'); // Recupera l'elemento radio
+        if (radioButton) {
+          radioButton.value = currentDate; // Aggiorna il value
+          const label = document.querySelector(`label[for='data_6']`); // Recupera la label associata
+          if (label) {
+            label.textContent = currentDate; // Aggiorna il testo della label
+          }
+        }
+      }
+
+      // Esegui la funzione al caricamento della pagina
+      window.onload = function() {
+        updateRadioButtonWithCurrentDate(); // Chiama la funzione per aggiornare il value
+      };
+  </script>
 
 </body></html>
