@@ -4,45 +4,89 @@
     <meta charset="UTF-8">
     <title>Pagina Principale</title>
 
-
     <script>
         // Funzione per reindirizzare ad una pagina di simulazione specifica
-        function vaiAllaSimulazione() {
-            window.location.href = "simulazione21_1.html";
+        function vaiAIndex() {
+            window.location.href = "index.html";
         }
     </script>
 
 
 <!--    <script>-->
 <!--        // Funzione per selezionare casualmente una delle pagine di simulazione-->
-<!--        function iniziaTest() {-->
-<!--            // Genera un numero casuale tra 1 e 50-->
-<!--            const pagina = Math.floor(Math.random() * 50) + 1;-->
+<!--        function startTest() {-->
+<!--            const startTime = Date.now();-->
+<!--            localStorage.setItem('startTime', startTime);-->
+<!--            // Genera un numero casuale tra 1 e 30-->
+<!--            const pagina = Math.floor(Math.random() * 30) + 1;-->
 <!--            // Reindirizza alla pagina corrispondente-->
-<!--            window.location.href = `simulazione22_${pagina}.html`;-->
+<!--            window.location.href = `simulazione21_${pagina}.html`;-->
 <!--        }-->
 <!--    </script>-->
 
-
-
     <script>
+        // Funzione per selezionare casualmente una pagina tra due set distinti
         function startTest() {
             const startTime = Date.now();
-            localStorage.setItem('startTime', startTime);
-            window.location.href = 'simulazione21_2.html';
+            localStorage.setItem('startTime', startTime); // Salva il tempo di inizio
+
+            // Scegli tra i set 21 e 22
+            const set = Math.floor(Math.random() * 2) + 21; // Può essere 21 o 22
+
+            // Genera un numero casuale tra 1 e 30
+            const pagina = Math.floor(Math.random() * 30) + 1;
+
+            // Crea l'URL della pagina basato sul set scelto
+            const pageUrl = `simulazione${set}_${pagina}.html`;
+
+            // Reindirizza alla pagina corrispondente
+            window.location.href = pageUrl;
         }
     </script>
+
+
+<!--    <script>-->
+<!--        function startTest() {-->
+<!--            const startTime = Date.now();-->
+<!--            localStorage.setItem('startTime', startTime);-->
+<!--            window.location.href = 'simulazione21_16.html';-->
+<!--        }-->
+<!--    </script>-->
 
 </head>
 <body>
 
-<h1>Simulazione CLICK DAY</h1>
-<button onclick="startTest()">INIZIA IL TEST</button> <!-- Pulsante per iniziare il test -->
+<div style="text-align: center;">
+    <h1 style="
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #333;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  ">Simulazione CLICK DAY</h1>
+</div>
 
-
-<!--<h1>Simulazione CLICK DAY</h1>-->
-<!--<button onclick="iniziaTest()">INIZIA IL TEST</button> &lt;!&ndash; Pulsante per iniziare il test &ndash;&gt;-->
-
-
+<div style="
+    display: flex;
+    justify-content: center; /* Allinea al centro orizzontalmente */
+    align-items: flex-start; /* Allinea in testa verticalmente */
+    height: 100vh; /* Occupa l'altezza intera della finestra */
+">
+    <button
+            onclick="startTest()"
+            style="
+            background-color: #4CAF50; /* Verde moderno */
+            color: white; /* Testo bianco */
+            font-size: 3.2em; /* Testo più grande */
+            padding: 20px 30px; /* Spaziatura del pulsante */
+            border: none; /* Nessun bordo */
+            border-radius: 5px; /* Angoli arrotondati */
+            cursor: pointer; /* Cambia il cursore su hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Transizioni per animazione */
+        "
+            onmouseover="this.style.backgroundColor = '#45a049'; this.style.boxShadow = '0 8px 10px rgba(0, 0, 0, 0.2)';"
+            onmouseout="this.style.backgroundColor = '#4CAF50'; this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';"
+    >INIZIA IL TEST</button>
+</div>
 </body>
 </html>

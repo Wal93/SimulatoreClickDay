@@ -2,7 +2,29 @@
   <meta charset="utf-8">
   <title>Bando ISI Simulazione</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/x-icon" href="wp-content/uploads/favicon.ico">
+
+    <script>
+        function getElapsedTime() {
+            const startTime = parseInt(localStorage.getItem('startTime'), 10); // Recupera dal localStorage
+            if (isNaN(startTime)) {
+                console.error("Il tempo di inizio non è stato trovato.");
+                return 0;
+            }
+            const currentTime = Date.now(); // Tempo attuale
+            const elapsedTime = currentTime - startTime; // Tempo trascorso
+            return elapsedTime;
+        }
+
+        function displayElapsedTime() {
+            const elapsedTime = getElapsedTime(); // Calcola il tempo trascorso
+            console.log(`Tempo trascorso: ${elapsedTime / 1000} secondi`); // Stampa il tempo in secondi
+        }
+
+        function handleAvantiClick(event) {
+            event.preventDefault();
+            window.location.href = 'final.html';
+        }
+    </script>
   <style>
     body {
       max-width: 1366px;
@@ -118,11 +140,11 @@
   </style>
 </head>
 
-<body>
+<body onload="displayElapsedTime()">
   <header>
     <h1>INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro</h1>
     <a id="logo-inail" href="#" title="torna alla homepage INAIL">
-      <img src="wp-content/uploads/LogoInail.png" alt="INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro">
+      <img src="LogoInail.png" alt="INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro">
     </a>
   </header>
   <div class="main">
@@ -132,7 +154,7 @@
           <div class="form-gray">
         <h3><strong>INSERIMENTO DATI</strong></h3>
         <p>Per procedere con l'invio della domanda è necessario compilare i seguenti campi:</p>
-        <form method="post" action="/simulazione22.php" style="text-align:left; width: 100%;">
+        <form style="text-align:left; width: 100%;">
           <p>* Seleziona la tipologia di rischio relativo al progetto presentato per il Bando Isi 2022:</p>
           <select id="bando" name="bando" style="width:50%; height:36px; padding-left:14px; margin-top: -6;">
             <option value="null"> - seleziona opzione - </option>
@@ -321,10 +343,10 @@
           <br>
           <input type="checkbox" id="NoRobot" name="NoRobot" value="NoRobot" onchange="document.getElementById('Avanti').disabled = !(this.checked &amp;&amp; document.getElementById('Acconsento').checked);">
           <label for="NoRobot"> * Non sono un robot</label>
-          <div style="padding: 36px 0px 56px;">
-            <input type="" class="button" value="ESCI" onclick="location.href='simulatore.php'" style="float:left">
-            <input name="Avanti" id="Avanti" type="submit" class="button" value="AVANTI" style="float:right" disabled="">
-          </div>
+            <div style="padding: 36px 0px 56px;">
+                <input type="" class="button" value="ESCI" onclick="location.href='index.html'" style="float:left">
+                <input name="Avanti" id="Avanti" type="submit" class="button" value="AVANTI" style="float:right" disabled onclick="handleAvantiClick(event)">
+            </div>
         </form>
       </div>
         </div>

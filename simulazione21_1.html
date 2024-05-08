@@ -4,23 +4,23 @@
   <title>Bando ISI Simulazione</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-
   <script>
-    let startTime;
-
-    function startTimer() {
-        startTime = new Date();
+    function getElapsedTime() {
+        const startTime = parseInt(localStorage.getItem('startTime'), 10); // Recupera dal localStorage
+        if (isNaN(startTime)) {
+            console.error("Il tempo di inizio non è stato trovato.");
+            return 0;
+        }
+        const currentTime = Date.now(); // Tempo attuale
+        const elapsedTime = currentTime - startTime; // Tempo trascorso
+        return elapsedTime;
     }
 
-    function stopTimer() {
-        const endTime = new Date();
-        const elapsedMilliseconds = endTime - startTime;
-        const elapsedSeconds = (elapsedMilliseconds / 1000).toFixed(2);
-        alert(`Tempo impiegato: ${elapsedSeconds} secondi`);
+    function displayElapsedTime() {
+        const elapsedTime = getElapsedTime(); // Calcola il tempo trascorso
+        console.log(`Tempo trascorso: ${elapsedTime / 1000} secondi`); // Stampa il tempo in secondi
     }
-  </script>
 
-  <script>
     function handleAvantiClick(event) {
         event.preventDefault();
         window.location.href = 'final.html';
@@ -142,7 +142,7 @@
   </style>
 </head>
 
-<body onload="startTimer()">
+<body  onload="displayElapsedTime()">
 <header>
   <h1>INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro</h1>
   <a id="logo-inail" href="#" title="torna alla homepage INAIL">
@@ -445,8 +445,7 @@
       <label for="NoRobot"> * Non sono un robot</label>
       <div style="padding: 36px 0px 56px;">
         <input type="" class="button" value="ESCI" onclick="location.href='index.html'" style="float:left">
-        <input name="Avanti" id="Avanti" type="submit" class="button" value="AVANTI" style="float:right"
-               disabled onclick="handleAvantiClick(event)">
+        <input name="Avanti" id="Avanti" type="submit" class="button" value="AVANTI" style="float:right" disabled onclick="handleAvantiClick(event)">
       </div>
     </form>
   </div>

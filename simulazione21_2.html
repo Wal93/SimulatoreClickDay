@@ -19,9 +19,7 @@
         const elapsedTime = getElapsedTime(); // Calcola il tempo trascorso
         console.log(`Tempo trascorso: ${elapsedTime / 1000} secondi`); // Stampa il tempo in secondi
     }
-  </script>
 
-  <script>
     function handleAvantiClick(event) {
         event.preventDefault();
         window.location.href = 'final.html';
@@ -341,7 +339,7 @@
           <input type="checkbox" id="NoRobot" name="NoRobot" value="NoRobot" onchange="document.getElementById('Avanti').disabled = !(this.checked &amp;&amp; document.getElementById('Acconsento').checked);">
           <label for="NoRobot"> * Non sono un robot</label>
           <div style="padding: 36px 0px 56px;">
-            <input type="" class="button" value="ESCI" onclick="location.href='simulatore.php'" style="float:left">
+            <input type="" class="button" value="ESCI" onclick="location.href='index.html'" style="float:left">
             <input name="Avanti" id="Avanti" type="submit" class="button" value="AVANTI" style="float:right" disabled onclick="handleAvantiClick(event)">
           </div>
         </form>
