@@ -32,6 +32,15 @@
            }, 100); // Ritardo di 1 secondo
        }
 
+    function checkConsent() {
+    // Ottiene il riferimento al checkbox e al pulsante INVIA
+        const checkbox = document.getElementById("Acconsento");
+        const inviaButton = document.getElementById("Invia");
+
+    // Disabilita il pulsante se la checkbox non è selezionata
+        inviaButton.disabled = !checkbox.checked;
+    }
+
     </script>
 
     <style>
@@ -149,7 +158,7 @@
     </style>
 </head>
 
-<body onload="displayElapsedTime()">
+<body onload="displayElapsedTime(); checkConsent();">
 <header>
     <h1>INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro</h1>
     <a id="logo-inail" href="#" title="torna alla homepage INAIL">
@@ -209,7 +218,7 @@
             <br>
             <p><strong>Informativa</strong></p>
             <input type="checkbox" id="Acconsento" name="Acconsento" value="Acconsento"
-                   onchange="document.getElementById('Invia').disabled = !this.checked;">
+                   onchange="checkConsent()">
             <label for="Acconsento"> * I dati inseriti potrebbero essere soggetto di verifica durante la lavorazione
                 della
                 domanda.</label><br>
@@ -227,7 +236,8 @@
                 <input name="Modifica" id="Modifica" type="submit" class="button" value="MODIFICA" style="float:right">
                 <input name="Invia" id="Invia" type="submit" class="button" value="INVIA"
                        style="float:right;background:green"
-                       onclick="stopCronometro(event)">
+                       onclick="stopCronometro(event)"
+                       disabled>
             </div>
         </form>
     </div>
