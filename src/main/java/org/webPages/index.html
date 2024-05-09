@@ -7,7 +7,7 @@
     <script>
         // Funzione per reindirizzare ad una pagina di simulazione specifica
         function vaiAIndex() {
-            window.location.href = "index.html";
+            window.location.href = "/src/main/java/org/webPages/index.html";
         }
     </script>
 
@@ -24,7 +24,7 @@
             const pagina = Math.floor(Math.random() * 30) + 1;
 
             // Crea l'URL della pagina basato sul set scelto
-            const pageUrl = `simulazione${set}_${pagina}.html`;
+            const pageUrl = `/src/main/java/org/webPages/simulationPages/simulazione${set}_${pagina}.html`;
 
             // Reindirizza alla pagina corrispondente
             window.location.href = pageUrl;
