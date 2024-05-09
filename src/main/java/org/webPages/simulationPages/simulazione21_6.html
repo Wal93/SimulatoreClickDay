@@ -1,0 +1,382 @@
+<html lang="it"><head>
+  <meta charset="utf-8">
+  <title>Bando ISI Simulazione</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <script>
+    function getElapsedTime() {
+        const startTime = parseInt(localStorage.getItem('startTime'), 10); // Recupera dal localStorage
+        if (isNaN(startTime)) {
+            console.error("Il tempo di inizio non è stato trovato.");
+            return 0;
+        }
+        const currentTime = Date.now(); // Tempo attuale
+        const elapsedTime = currentTime - startTime; // Tempo trascorso
+        return elapsedTime;
+    }
+
+    function displayElapsedTime() {
+        const elapsedTime = getElapsedTime(); // Calcola il tempo trascorso
+        console.log(`Tempo trascorso: ${elapsedTime / 1000} secondi`); // Stampa il tempo in secondi
+    }
+
+    function handleAvantiClick(event) {
+        event.preventDefault();
+        window.location.href = 'final.html';
+    }
+  </script>
+
+  <style>
+    body {
+      max-width: 1366px;
+      width: auto;
+      margin-right: auto;
+      margin-left: auto;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14.4333px;
+    }
+
+    footer {
+      background-color: #002e5f;
+      padding: 20px 60px 20px;
+      color: #fff;
+      font-size: .9em;
+    }
+
+    h1 {
+      display: none
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 16.5px;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    header {
+      padding-top: 40px;
+      border-bottom: 20px solid #002e5f;
+    }
+
+    #logo-inail {
+      margin-left: 60px;
+      margin-bottom: 40px;
+      display: block;
+      width: 176px;
+      height: 56px;
+    }
+
+    #logo-inail img {
+      width: 176px;
+    }
+
+    .main {
+      border-top: 20px solid #1E6665;
+      padding: 30px;
+    }
+
+    .main h2 {
+      color: #002e5f;
+      margin-bottom: 30px;
+      font-family: 'Open Sans semibold', sans-serif;
+      font-size: 23.8333px;
+      font-weight: 500;
+    }
+
+    .form-gray {
+      background-color: #f2f2f2;
+      padding: 35px 30px;
+    }
+
+    .xs-12 {
+      width: 100%;
+    }
+
+    .button {
+      background-color: #002e5f;
+      border: none;
+      color: white;
+      padding: 14px;
+      width: 200px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    input:disabled {
+      opacity: 0.5;
+    }
+
+    /*SM*/
+    @media (min-width: 768px) {}
+
+    /*MD*/
+    @media (min-width: 992px) {
+      .md-6 {
+        width: 50%;
+      }
+    }
+
+    /*LG*/
+    @media (min-width: 1200px) {}
+  </style>
+</head>
+
+<body onload="displayElapsedTime()">
+  <header>
+    <h1>INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro</h1>
+    <a id="logo-inail" href="#" title="torna alla homepage INAIL">
+      <img src="../../../../../../LogoInail.png" alt="INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro">
+    </a>
+  </header>
+  <div class="main">
+    <h2>Bando ISI 2021
+      Infortunistici - Convalida Domanda
+    </h2>
+          <div class="form-gray">
+        <h3><strong>INSERIMENTO DATI</strong></h3>
+        <p>Per procedere con l'invio della domanda è necessario compilare i seguenti campi:</p>
+        <form style="text-align:left; width: 100%;">
+          <p  id="paragrafo-giorno">* Seleziona il giorno della data odierna (
+            07):
+          </p>
+          <select id="giorno" name="giorno" style="width:50%; height:36px; padding-left:14px; margin-top: -6;">
+            <option value="null"> - seleziona opzione - </option>
+            <option value="31">
+              31            </option>
+            <option value="5">
+              5            </option>
+            <option value="20">
+              20            </option>
+            <option value="2">
+              2            </option>
+            <option value="19">
+              19            </option>
+            <option value="10">
+              10            </option>
+            <option value="14">
+              14            </option>
+            <option value="13">
+              13            </option>
+            <option value="26">
+              26            </option>
+            <option value="29">
+              29            </option>
+            <option value="17">
+              17            </option>
+            <option value="18">
+              18            </option>
+            <option value="16">
+              16            </option>
+            <option value="1">
+              1            </option>
+            <option value="23">
+              23            </option>
+            <option value="24">
+              24            </option>
+            <option value="3">
+              3            </option>
+            <option value="15">
+              15            </option>
+            <option value="6">
+              6            </option>
+            <option value="12">
+              12            </option>
+            <option value="11">
+              11            </option>
+            <option value="27">
+              27            </option>
+            <option value="7">
+              7            </option>
+            <option value="21">
+              21            </option>
+            <option value="28">
+              28            </option>
+            <option value="30">
+              30            </option>
+            <option value="9">
+              9            </option>
+            <option value="22">
+              22            </option>
+            <option value="4">
+              4            </option>
+            <option value="25">
+              25            </option>
+            <option value="8">
+              8            </option>
+          </select>
+          <br><br>
+          <p  id="paragrafo-mese">* Seleziona il mese della data odierna (
+            5):
+          </p>
+          <select id="mese" name="mese" style="width:50%; height:36px; padding-left:14px; margin-top: -6;">
+            <option value="null"> - seleziona opzione - </option>
+            <option value="11">
+              11            </option>
+            <option value="Febbraio">
+              Febbraio            </option>
+            <option value="Marzo">
+              Marzo            </option>
+            <option value="5">
+              5            </option>
+            <option value="10">
+              10            </option>
+            <option value="Agosto">
+              Agosto            </option>
+            <option value="Aprile">
+              Aprile            </option>
+            <option value="9">
+              9            </option>
+            <option value="Gennaio">
+              Gennaio            </option>
+            <option value="Giugno">
+              Giugno            </option>
+            <option value="Dicembre">
+              Dicembre            </option>
+            <option value="7">
+              7            </option>
+          </select>
+          <br><br>
+          <p>* Seleziona l'anno della data odierna (
+            2024):
+          </p>
+          <select id="anno" name="anno" style="width:50%; height:36px; padding-left:14px; margin-top: -6;">
+            <option value="null"> - seleziona opzione - </option>
+            <option value="2022">
+              2022            </option>
+            <option value="2018">
+              2018            </option>
+            <option value="2016">
+              2016            </option>
+            <option value="2029">
+              2029            </option>
+            <option value="2031">
+              2031            </option>
+            <option value="2019">
+              2019            </option>
+            <option value="2026">
+              2026            </option>
+            <option value="2014">
+              2014            </option>
+            <option value="2030">
+              2030            </option>
+            <option value="2020">
+              2020            </option>
+            <option value="2024">
+              2024            </option>
+            <option value="2013">
+              2013            </option>
+            <option value="2017">
+              2017            </option>
+            <option value="2028">
+              2028            </option>
+            <option value="2023">
+              2023            </option>
+            <option value="2025">
+              2025            </option>
+            <option value="2015">
+              2015            </option>
+            <option value="2027">
+              2027            </option>
+            <option value="2032">
+              2032            </option>
+            <option value="2021">
+              2021            </option>
+          </select>
+          <br><br>
+          <p>* Selezionare la data del Momento
+            2: (21/10/2021 10:00) indicata nella regole tecniche:
+          </p>
+          <select id="momento" name="momento" style="width:50%; height:36px; padding-left:14px; margin-top: -6;">
+            <option value="null"> - seleziona opzione - </option>
+            <option value="21/10/1011 10:00">21/10/1011 10:00</option><option value="21/11/2021 10:00">21/11/2021 10:00</option><option value="10/21/2021 21:10">10/21/2021 21:10</option><option value="21/11/2021 21:10">21/11/2021 21:10</option><option value="10/21/2021 10:00">10/21/2021 10:00</option><option value="21/10/2021 10:00">21/10/2021 10:00</option><option value="21/11/2012 10:00">21/11/2012 10:00</option><option value="21/10/1011 21:10">21/10/1011 21:10</option><option value="21/10/2021 21:10">21/10/2021 21:10</option><option value="10/21/2020 21:10">10/21/2020 21:10</option><option value="10/21/2020 10:00">10/21/2020 10:00</option><option value="21/11/2020 10:00">21/11/2020 10:00</option><option value="21/11/2020 21:10">21/11/2020 21:10</option><option value="21/11/2012 21:10">21/11/2012 21:10</option>          </select>
+          <br><br>
+          <p>* Seleziona il nome e cognome del partecipante al bando (
+            Fabio Fabio):
+          </p>
+          <select id="nome" name="nome" style="width:50%; height:36px; padding-left:14px; margin-top: -6;">
+            <option value="null"> - seleziona opzione - </option>
+            <option value="-cc7cede53617d6f4f6a81f72d2bb4a7322e73aa4637bd396eb99e57b8362404">-cc7cede53617d6f4f6a81f72d2bb4a7322e73aa4637bd396eb99e57b8362404</option><option value="FabioFabio@gmail.com">FabioFabio@gmail.com</option><option value="+bfd7f74a91b9">+bfd7f74a91b9</option><option value="-ee9f23158e05">-ee9f23158e05</option><option value="Fabio Fabio">Fabio Fabio</option><option value="FabioFabio@inail.it">FabioFabio@inail.it</option><option value="3512430464">3512430464</option><option value="admin@inail.it">admin@inail.it</option><option value="user@inail.it">user@inail.it</option>          </select>
+          <br><br>
+          <p>* Seleziona, nell'ordine corretto, le vocali contenute nelle parole
+            "Bando ISI" (aoii):
+          </p>
+          <select id="vocali" name="vocali" style="width:50%; height:36px; padding-left:14px; margin-top: -6;">
+            <option value="null"> - seleziona opzione - </option>
+            <option value="iuaoeiai">iuaoeiai</option><option value="iuaoeao">iuaoeao</option><option value="aoiai">aoiai</option><option value="aoii">aoii</option><option value="iuaoeai">iuaoeai</option>          </select>
+          <br><br>
+          <p>* Seleziona, a partire dal segno includendo gli estremi, dal
+            27° al 34° carattere, del<br>codice
+            identificativo assegnato<br>
+            -cc7cede53617d6f4f6a81f72d2bb4a7322e73aa4637bd396eb99e57b8362404 (2bb4a73):
+          </p>
+          <select id="identificativo" name="identificativo" style="width:50%; height:36px; padding-left:14px; margin-top: -6;">
+            <option value="null"> - seleziona opzione - </option>
+            <option value="f2969e3a">f2969e3a</option><option value="7ae8d186">7ae8d186</option><option value="2bb4a73">2bb4a73</option><option value="8236b614">8236b614</option><option value="a074b66a">a074b66a</option><option value="794bef6a">794bef6a</option><option value="b2842fc3">b2842fc3</option><option value="c01c2bd5">c01c2bd5</option><option value="2ba78fe2">2ba78fe2</option>          </select>
+          <br><br>
+          <input type="checkbox" id="Acconsento" name="Acconsento" value="Acconsento" onchange="document.getElementById('Avanti').disabled = !(this.checked &amp;&amp; document.getElementById('NoRobot').checked);">
+          <label for="Acconsento"> * Dichiarazione di presa visione delle regole tecniche</label><br>
+          <br>
+          <input type="checkbox" id="NoRobot" name="NoRobot" value="NoRobot" onchange="document.getElementById('Avanti').disabled = !(this.checked &amp;&amp; document.getElementById('Acconsento').checked);">
+          <label for="NoRobot"> * Non sono un robot</label>
+          <div style="padding: 36px 0px 56px;">
+            <input type="" class="button" value="ESCI" onclick="location.href='index.html'" style="float:left">
+            <input name="Avanti" id="Avanti" type="submit" class="button" value="AVANTI" style="float:right" disabled onclick="handleAvantiClick(event)">
+          </div>
+        </form>
+      </div>
+        </div>
+  <footer> © 2018 INAIL <span> - </span>ISTITUTO NAZIONALE PER L'ASSICURAZIONE CONTRO GLI INFORTUNI SUL LAVORO<span> -
+    </span>P. IVA 00968951004
+  </footer>
+  <script>
+    // Funzione per aggiornare i paragrafi con il giorno e il mese correnti
+    function aggiornaDataParagrafi() {
+        // Elenco dei mesi in forma testuale
+        var nomiMesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio",
+                        "Giugno", "Luglio", "Agosto", "Settembre",
+                        "Ottobre", "Novembre", "Dicembre"];
+
+        // Ottieni la data odierna
+        var dataOggi = new Date();
+        // Estrarre giorno e mese (numerico e descrittivo)
+        var giornoOggi = dataOggi.getDate();
+        var meseNumerico = dataOggi.getMonth() + 1; // Mesi da 1 a 12
+        var meseDescrittivo = nomiMesi[dataOggi.getMonth()]; // Mese testuale
+
+        // Aggiorna il paragrafo per il giorno
+        var paragrafoGiorno = document.getElementById("paragrafo-giorno");
+        paragrafoGiorno.textContent = `* Seleziona il giorno della data odierna (${giornoOggi}):`;
+
+        // Aggiorna il paragrafo per il mese numerico
+        var paragrafoMeseNumerico = document.getElementById("paragrafo-mese-numerico");
+        paragrafoMeseNumerico.textContent = `* Seleziona il mese numerico (${meseNumerico}):`;
+
+        // Aggiorna il paragrafo per il mese descrittivo
+        var paragrafoMeseDescrittivo = document.getElementById("paragrafo-mese-descrittivo");
+        paragrafoMeseDescrittivo.textContent = `* Seleziona il mese descrittivo (${meseDescrittivo}):`;
+    }
+
+    // Esegui la funzione dopo che la pagina è stata caricata
+    window.onload = aggiornaDataParagrafi;
+  </script>
+</body></html>

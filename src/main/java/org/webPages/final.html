@@ -1,0 +1,249 @@
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Bando ISI Simulazione</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script>
+        function stopCronometro(event) {
+           event.preventDefault(); // Prevenire l'invio del modulo
+
+           const startTime = parseInt(localStorage.getItem('startTime'), 10);
+           if (isNaN(startTime)) {
+               console.error("Il tempo di inizio non è stato trovato.");
+               return;
+           }
+
+           const currentTime = Date.now();
+           const elapsedTime = currentTime - startTime;
+
+           localStorage.removeItem('startTime'); // Interrompe il cronometro
+
+           const seconds = Math.floor(elapsedTime / 1000); // Secondi interi
+           const milliseconds = elapsedTime % 1000; // Millesimi
+
+           const formattedTime = `${seconds}.${milliseconds}`; // Formattato come secondi.millesimi
+
+           alert(`Tempo trascorso: ${formattedTime} secondi`); // Mostra il tempo trascorso
+
+           // Reindirizza a index.html con un ritardo per garantire che l'alert sia chiuso
+           setTimeout(() => {
+               window.location.href = 'index.html';
+           }, 100); // Ritardo di 1 secondo
+       }
+
+    function checkConsent() {
+    // Ottiene il riferimento al checkbox e al pulsante INVIA
+        const checkbox = document.getElementById("Acconsento");
+        const inviaButton = document.getElementById("Invia");
+
+    // Disabilita il pulsante se la checkbox non è selezionata
+        inviaButton.disabled = !checkbox.checked;
+    }
+
+    </script>
+
+    <style>
+        body {
+          max-width: 1366px;
+          width: auto;
+          margin-right: auto;
+          margin-left: auto;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 14.4333px;
+        }
+
+        footer {
+          background-color: #002e5f;
+          padding: 20px 60px 20px;
+          color: #fff;
+          font-size: .9em;
+        }
+
+        h1 {
+          display: none
+        }
+
+        h2 {
+          margin-top: 0;
+        }
+
+        h3 {
+          margin: 0;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 16.5px;
+        }
+
+        fieldset {
+          margin: 0;
+          padding: 0;
+          border: 0;
+        }
+
+        p {
+          margin-bottom: 10px;
+        }
+
+        header {
+          padding-top: 40px;
+          border-bottom: 20px solid #002e5f;
+        }
+
+        #logo-inail {
+          margin-left: 60px;
+          margin-bottom: 40px;
+          display: block;
+          width: 176px;
+          height: 56px;
+        }
+
+        #logo-inail img {
+          width: 176px;
+        }
+
+        .main {
+          border-top: 20px solid #1E6665;
+          padding: 30px;
+        }
+
+        .main h2 {
+          color: #002e5f;
+          margin-bottom: 30px;
+          font-family: 'Open Sans semibold', sans-serif;
+          font-size: 23.8333px;
+          font-weight: 500;
+        }
+
+        .form-gray {
+          background-color: #f2f2f2;
+          padding: 35px 30px;
+        }
+
+        .xs-12 {
+          width: 100%;
+        }
+
+        .button {
+          background-color: #002e5f;
+          border: none;
+          color: white;
+          padding: 14px;
+          width: 200px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+
+        input:disabled {
+          opacity: 0.5;
+        }
+
+        /*SM*/
+        @media (min-width: 768px) {}
+
+        /*MD*/
+        @media (min-width: 992px) {
+          .md-6 {
+            width: 50%;
+          }
+        }
+
+        /*LG*/
+        @media (min-width: 1200px) {}
+    </style>
+</head>
+
+<body onload="displayElapsedTime(); checkConsent();">
+<header>
+    <h1>INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro</h1>
+    <a id="logo-inail" href="#" title="torna alla homepage INAIL">
+        <img src="../../../../../LogoInail.png" alt="INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro">
+    </a>
+</header>
+<div class="main">
+    <h2>Bando ISI 2021
+        Amianto - Convalida Domanda
+    </h2>
+    <div class="form-gray">
+        <h3><strong>INSERIMENTO DATI</strong></h3>
+        <h3>Riepilogo dati inseriti</h3>
+        <form style="text-align:left; width: 100%;">
+            <table>
+                <tbody>
+                <tr>
+                    <td><strong>Data odierna - Giorno:</strong></td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Data odierna - Mese:</strong></td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Data odierna - Anno:</strong></td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Vocali nella parola
+                        Bando INAIL:
+                    </strong></td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Momento
+                        :
+                    </strong></td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Caratteri interni al codice identificativo:</strong></td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Dichiarazione:</strong></td>
+                    <td>Ho preso visione delle regole tecniche</td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <p><strong>Informativa</strong></p>
+            <input type="checkbox" id="Acconsento" name="Acconsento" value="Acconsento"
+                   onchange="checkConsent()">
+            <label for="Acconsento"> * I dati inseriti potrebbero essere soggetto di verifica durante la lavorazione
+                della
+                domanda.</label><br>
+
+            <input type="hidden" value="null" name="giorno" id="giorno">
+            <input type="hidden" value="null" name="mese" id="mese">
+            <input type="hidden" value="null" name="anno" id="anno">
+            <input type="hidden" value="null" name="momento" id="momento">
+            <input type="hidden" value="null" name="nome" id="nome">
+            <input type="hidden" value="null" name="vocali" id="vocali">
+            <input type="hidden" value="null" name="identificativo" id="identificativo">
+
+            <div style="padding: 36px 0px 56px;">
+                <input type="" class="button" value="ESCI" onclick="location.href='/src/main/java/org/webPages/index.html'" style="float:left">
+                <input name="Modifica" id="Modifica" type="submit" class="button" value="MODIFICA" style="float:right">
+                <input name="Invia" id="Invia" type="submit" class="button" value="INVIA"
+                       style="float:right;background:green"
+                       onclick="stopCronometro(event)"
+                       disabled>
+            </div>
+        </form>
+    </div>
+</div>
+<footer> © 2018 INAIL <span> - </span>ISTITUTO NAZIONALE PER L'ASSICURAZIONE CONTRO GLI INFORTUNI SUL LAVORO<span> -
+    </span>P. IVA 00968951004
+</footer>
+</body>
+</html>
