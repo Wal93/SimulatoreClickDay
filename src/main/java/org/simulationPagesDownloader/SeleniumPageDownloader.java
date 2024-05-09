@@ -1,4 +1,4 @@
-package org.example;
+package org.simulationPagesDownloader;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

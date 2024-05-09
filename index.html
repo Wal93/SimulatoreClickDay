@@ -15,18 +15,10 @@
         // Funzione per selezionare casualmente una pagina tra due set distinti
         function startTest() {
             const startTime = Date.now();
-            localStorage.setItem('startTime', startTime); // Salva il tempo di inizio
-
-            // Scegli tra i set 21 e 22
-            const set = Math.floor(Math.random() * 2) + 21; // Può essere 21 o 22
-
-            // Genera un numero casuale tra 1 e 30
+            localStorage.setItem('startTime', startTime);
+            const set = Math.floor(Math.random() * 2) + 21;
             const pagina = Math.floor(Math.random() * 30) + 1;
-
-            // Crea l'URL della pagina basato sul set scelto
             const pageUrl = `simulazione${set}_${pagina}.html`;
-
-            // Reindirizza alla pagina corrispondente
             window.location.href = pageUrl;
         }
     </script>
@@ -44,19 +36,23 @@
 <body>
 
 <div style="text-align: center;">
+    <a id="logo-inail" href="#" title="torna alla homepage INAIL">
+        <img src="LogoInail.png" alt="INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro">
+    </a>
     <h1 style="
       font-size: 2.5em;
       font-weight: bold;
       color: #333;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   ">Simulazione CLICK DAY</h1>
+
 </div>
 
 <div style="
     display: flex;
     justify-content: center; /* Allinea al centro orizzontalmente */
     align-items: flex-start; /* Allinea in testa verticalmente */
-    height: 100vh; /* Occupa l'altezza intera della finestra */
+    height: 20vh; /* Occupa l'altezza intera della finestra */
 ">
     <button
             onclick="startTest()"
@@ -75,5 +71,22 @@
             onmouseout="this.style.backgroundColor = '#4CAF50'; this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';"
     >INIZIA IL TEST</button>
 </div>
+
+<div style="
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Centra il testo all'interno del contenitore */
+    height: 20vh; /* Altezza specificata per il contenitore */
+">
+    <h1 style="
+          font-size: 1.5em;
+          font-weight: bold;
+          color: red;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+     "><br><br>RICORDA CHE QUESTA E' UNA SIMULAZIONE A TUTTI GLI EFFETTI<br><br>PER QUANTO CERCA DI ESSERE IL PIU' REALE POSSIBILE<br>NON RISPECCHIA ESATTAMENTE IL CLICK DAY CHE EFFETTUEREMO
+    </h1>
+</div>
+
 </body>
 </html>
